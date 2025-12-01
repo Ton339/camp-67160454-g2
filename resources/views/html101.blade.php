@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Page Title</title>
+    <title>workshop # html-form</title>
 </head>
 
 <body>
@@ -97,8 +97,12 @@
                 ยินยอมให้เก็บข้อมูล
 
             </div>
-            <input class="btn btn-light" type="reset" value="Reset">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <div style="display: flex;">
+                <input class="btn btn-light" type="reset" value="Reset">
+                <button type="submit" class="btn btn-success" style="margin-left: auto;">Submit</button>
+            </div>
+
+
         </form>
     </div>
 </body>
