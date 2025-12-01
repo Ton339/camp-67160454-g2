@@ -97,7 +97,7 @@
                 ยินยอมให้เก็บข้อมูล
 
             </div>
-
+            <input class="btn btn-light" type="reset" value="Reset">
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </div>
