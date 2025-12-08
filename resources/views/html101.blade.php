@@ -1,110 +1,162 @@
-<!DOCTYPE html>
-<html>
+@extends('template.defaultPage')
 
-<head>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <title>workshop # html-form</title>
-</head>
-
-<body>
+@section('content')
     <div class="container">
-        <h1>workshop # html-form</h1>
-        <form class="mt-5">
-            <div class="row g-2 mb-3">
-                <div class="input-group  col">
-                    <span class="input-group-text" id="basic-addon1" for="firstName">ชื่อ</span>
-                    <input type="text" class="form-control" placeholder="เช่น สมชาย" aria-label="เช่น สมชาย"
-                        aria-describedby="basic-addon1" id="firstName">
-                </div>
-                <div class="input-group col">
-                    <span class="input-group-text" id="basic-addon1" for="lastName">นามสกุล</span>
-                    <input type="text" class="form-control" placeholder="เช่น ใจดี" aria-label="เช่น ใจดี"
-                        aria-describedby="basic-addon1" id="lastName">
-                </div>
-            </div>
+        <h1>workshop # html-form (Bootstrap Style)</h1>
 
-            <div class="row g-2 mb-3 input-group">
-                <div class="input-group  col">
-                    <span class="input-group-text " id="basic-addon1" for="birthDate">วันเกิด</span>
-                    <input type="date" class="form-control " aria-label="วันที่" aria-describedby="basic-addon1"
-                        id="birthDate">
+        <form class="row g-3 needs-validation" novalidate>
+
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">ชื่อ</label>
+                <input type="text" class="form-control" id="firstName" placeholder="เช่น สมชาย" required>
+                <div class="valid-feedback">
+                    ดีเยียม
                 </div>
-                <div class="input-group  col">
-                    <div class="form-check-inline">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            เพศ </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            ชาย </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            หญิง
-                        </label>
-                    </div>
+                <div class="invalid-feedback">
+                    กรุณากรอกชื่อ
                 </div>
             </div>
 
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupFile01">รูป</label>
-                <input type="file" class="form-control" id="inputGroupFile01">
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">นามสกุล</label>
+                <input type="text" class="form-control" id="lastName" placeholder="เช่น ใจดี" required>
+                <div class="valid-feedback">
+                    ดีเยียม
+                </div>
+                <div class="invalid-feedback">
+                    กรุณากรอกนามสกุล
+                </div>
             </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text">ที่อยู่</span>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+            <div class="col-md-6">
+                <label for="birthDate" class="form-label">วันเกิด</label>
+                <input type="date" class="form-control" id="birthDate" required>
+                <div class="valid-feedback">
+                    ดีเยียม
+                </div>
+                <div class="invalid-feedback">
+                    กรุณาระบุวันเกิด
+                </div>
             </div>
 
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">สีที่ชอบ</label>
-                <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option value="1">เเดง</option>
+            <div class="col-md-6">
+                <label class="form-label d-block">เพศ</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderMale" required>
+                    <label class="form-check-label" for="genderMale">ชาย</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" required>
+                    <label class="form-check-label" for="genderFemale">หญิง</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="formFile" class="form-label">รูปภาพ</label>
+                <input class="form-control" type="file" id="formFile" required>
+                <div class="valid-feedback">
+                    ดีเยียม
+                </div>
+                <div class="invalid-feedback">
+                    กรุณาอัปโหลดรูปภาพ
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="address" class="form-label">ที่อยู่</label>
+                <textarea class="form-control" id="address" rows="3" required></textarea>
+                <div class="valid-feedback">
+                    ดีเยียม
+                </div>
+                <div class="invalid-feedback">
+                    กรุณากรอกที่อยู่
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="favColor" class="form-label">สีที่ชอบ</label>
+                <select class="form-select" id="favColor" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="1">แดง</option>
                     <option value="2">เขียว</option>
                     <option value="3">น้ำเงิน</option>
                 </select>
+                <div class="valid-feedback">
+                    ดีเยียม
+                </div>
+                <div class="invalid-feedback">
+                    กรุณาเลือกสี
+                </div>
             </div>
 
-            <div class="mb-3">
-                <div class="form-check-inline">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        แนวเพลงที่ชอบ </label>
+            <div class="col-md-6">
+
+                <label class="form-label d-block">แนวเพลงที่ชอบ</label>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music1" required>
+                    <label class="form-check-label" for="music1">เพื่อชีวิต</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music2" required>
+                    <label class="form-check-label" for="music2">ลูกทุ่ง</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        เพื่อชีวิต </label>
+                    <input class="form-check-input" type="radio" name="music_genre" id="music3" required>
+                    <label class="form-check-label" for="music3">อื่นๆ</label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        ลูกทุ่ง
+
+
+
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        ยินยอมให้เก็บข้อมูล
                     </label>
+                    <div class="valid-feedback">
+                        ดีเยียม
+                    </div>
+                    <div class="invalid-feedback">
+                        คุณต้องกดยินยอมก่อน
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        อื่นๆ
-                    </label>
-                </div>
             </div>
-            <div class="mb-3">
-                <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                ยินยอมให้เก็บข้อมูล
-
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <button type="reset" class="btn btn-light">Reset</button>
+                <button class="btn btn-primary" type="submit">Submit form</button>
             </div>
-            <div style="display: flex;">
-                <input class="btn btn-light" type="reset" value="Reset">
-                <button type="submit" class="btn btn-success" style="margin-left: auto;">Submit</button>
-            </div>
-
 
         </form>
     </div>
-</body>
+@endsection
 
-</html>
+@push('scripts')
+    <script>
+        console.log('testๆๆ');
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            console.log('validat called')
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+@endpush
