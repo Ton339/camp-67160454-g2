@@ -9,17 +9,18 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <title>workshop # html-form</title>
+    <title>workshop # html-@yield('title')</title>
 </head>
 <style>
     body {
         font-family: "Noto Sans Thai", sans-serif;
     }
 </style>
+@stack('styles')
 
 <body>
     <div class="container">
-        <h1>template/defaultPage</h1>
+        <h1 class="mt-4">@yield('header')</h1>
         @yield('content')
     </div>
     @stack('scripts')

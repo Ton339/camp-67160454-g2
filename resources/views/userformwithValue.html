@@ -1,0 +1,223 @@
+<div class="container">
+
+        <form class="row g-3 needs-validation" novalidate accept="#" method="post">
+            @csrf
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">ชื่อ</label>
+                {{-- เพิ่ม name="first_name" --}}
+                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="เช่น สมชาย" required value="สม">
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณากรอกชื่อ</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">นามสกุล</label>
+                {{-- เพิ่ม name="last_name" --}}
+                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="เช่น ใจดี" required>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณากรอกนามสกุล</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="birthDate" class="form-label">วันเกิด</label>
+                {{-- เพิ่ม name="birth_date" --}}
+                <input type="date" class="form-control" id="birthDate" name="birth_date" required>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณาระบุวันเกิด</div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label d-block">เพศ</label>
+                {{-- name="gender" มีอยู่แล้ว แต่ต้องใส่ value ให้ด้วย เพื่อให้ Controller รู้ว่าเลือกอะไร --}}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required>
+                    <label class="form-check-label" for="genderMale">ชาย</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" required>
+                    <label class="form-check-label" for="genderFemale">หญิง</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="formFile" class="form-label">รูปภาพ</label>
+                {{-- เพิ่ม name="profile_image" --}}
+                <input class="form-control" type="file" id="formFile" name="profile_image" required>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณาอัปโหลดรูปภาพ</div>
+            </div>
+
+            <div class="col-12">
+                <label for="address" class="form-label">ที่อยู่</label>
+                {{-- เพิ่ม name="address" --}}
+                <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณากรอกที่อยู่</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="favColor" class="form-label">สีที่ชอบ</label>
+                {{-- เพิ่ม name="fav_color" --}}
+                <select class="form-select" id="favColor" name="fav_color" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="red">แดง</option>
+                    <option value="green">เขียว</option>
+                    <option value="blue">น้ำเงิน</option>
+                </select>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณาเลือกสี</div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label d-block">แนวเพลงที่ชอบ</label>
+                {{-- name="music_genre" มีแล้ว ใส่ value เพิ่ม --}}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music1" value="life"
+                        required>
+                    <label class="form-check-label" for="music1">เพื่อชีวิต</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music2" value="lukthung"
+                        required>
+                    <label class="form-check-label" for="music2">ลูกทุ่ง</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music3" value="other"
+                        required>
+                    <label class="form-check-label" for="music3">อื่นๆ</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    {{-- เพิ่ม name="consent" --}}
+                    <input class="form-check-input" type="checkbox" value="1" id="invalidCheck" name="consent"
+                        required>
+                    <label class="form-check-label" for="invalidCheck">
+                        ยินยอมให้เก็บข้อมูล
+                    </label>
+                    <div class="valid-feedback">ดีเยียม</div>
+                    <div class="invalid-feedback">คุณต้องกดยินยอมก่อน</div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <button type="reset" class="btn btn-light">Reset</button>
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
+
+
+<!-- มี value แล้ว -->
+
+
+    <div class="container">
+
+        <form class="row g-3 needs-validation" novalidate accept="#" method="post">
+            @csrf
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">ชื่อ</label>
+                {{-- เพิ่ม name="first_name" --}}
+                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="เช่น สมชาย" required value="สิษฐเชษฐ์">
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณากรอกชื่อ</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">นามสกุล</label>
+                {{-- เพิ่ม name="last_name" --}}
+                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="เช่น ใจดี" required value="กระจายศรี>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณากรอกนามสกุล</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="birthDate" class="form-label">วันเกิด</label>
+                {{-- เพิ่ม name="birth_date" --}}
+                <input type="date" class="form-control" id="birthDate" name="birth_date" required value="2000-01-01">
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณาระบุวันเกิด</div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label d-block">เพศ</label>
+                {{-- name="gender" มีอยู่แล้ว แต่ต้องใส่ value ให้ด้วย เพื่อให้ Controller รู้ว่าเลือกอะไร --}}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required>
+                    <label class="form-check-label" for="genderMale">ชาย</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" required>
+                    <label class="form-check-label" for="genderFemale">หญิง</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="formFile" class="form-label">รูปภาพ</label>
+                {{-- เพิ่ม name="profile_image" --}}
+                <input class="form-control" type="file" id="formFile" name="profile_image" required>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณาอัปโหลดรูปภาพ</div>
+            </div>
+
+            <div class="col-12">
+                <label for="address" class="form-label">ที่อยู่</label>
+                {{-- เพิ่ม name="address" --}}
+                <textarea class="form-control" id="address" name="address" rows="3" required value="บ้านฉัน"></textarea>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณากรอกที่อยู่</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="favColor" class="form-label">สีที่ชอบ</label>
+                {{-- เพิ่ม name="fav_color" --}}
+                <select class="form-select" id="favColor" name="fav_color" required value="แดง">
+                    <option selected disabled value="">Choose...</option>
+                    <option value="red">แดง</option>
+                    <option value="green">เขียว</option>
+                    <option value="blue">น้ำเงิน</option>
+                </select>
+                <div class="valid-feedback">ดีเยียม</div>
+                <div class="invalid-feedback">กรุณาเลือกสี</div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label d-block">แนวเพลงที่ชอบ</label>
+                {{-- name="music_genre" มีแล้ว ใส่ value เพิ่ม --}}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music1" value="life"
+                        required>
+                    <label class="form-check-label" for="music1">เพื่อชีวิต</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music2" value="lukthung"
+                        required>
+                    <label class="form-check-label" for="music2">ลูกทุ่ง</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="music_genre" id="music3" value="other"
+                        required>
+                    <label class="form-check-label" for="music3">อื่นๆ</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    {{-- เพิ่ม name="consent" --}}
+                    <input class="form-check-input" type="checkbox" value="1" id="invalidCheck" name="consent"
+                        required>
+                    <label class="form-check-label" for="invalidCheck">
+                        ยินยอมให้เก็บข้อมูล
+                    </label>
+                    <div class="valid-feedback">ดีเยียม</div>
+                    <div class="invalid-feedback">คุณต้องกดยินยอมก่อน</div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <button type="reset" class="btn btn-light">Reset</button>
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
