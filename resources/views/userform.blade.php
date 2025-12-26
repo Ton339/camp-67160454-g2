@@ -16,7 +16,6 @@
                         <form class="row g-4 needs-validation" novalidate action="/user" method="post"
                             enctype="multipart/form-data">
                             @csrf
-
                             {{-- ส่วนชื่อ-นามสกุล --}}
                             <div class="col-md-6">
                                 <label for="firstName" class="form-label fw-bold text-secondary">ชื่อ</label>
